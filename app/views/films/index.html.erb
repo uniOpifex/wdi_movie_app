@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Movies</h1>
+
+<% @films.each do |film| %>
+    <div>
+      <%= image_tag film.image %>
+      <div><%= film.title %></div>
+      <div>Rating: <%= film.rating %></div>
+      <div>Year: <%= film.release_year %></div>
+
+      <div><%= link_to 'Remove From Favorites', film, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+
+    </div>
+
+    <br />
+<% end %>
